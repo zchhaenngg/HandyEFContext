@@ -92,7 +92,7 @@
             return entry.OriginalValues[propertyName]?.ToString();
         }
         public virtual void Write(DbEntityEntry entry, params string[] ignores)
-        {   
+        {  
             var history = GetHistory(entry, ignores);
             if (!string.IsNullOrWhiteSpace(history.description))
             {

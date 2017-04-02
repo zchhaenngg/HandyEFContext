@@ -66,18 +66,13 @@
         {
             return ObjectContext.GetObjectType(entityType);
         }
-        public string GetPropertyDescription(Type entity, string propertyName)
+        public virtual string GetPropertyDescription(Type entity, string propertyName)
         {
             var propertyInfo = entity.GetProperty(propertyName);
             var displayAttribute = propertyInfo.GetCustomAttributes(false).FirstOrDefault(c => c is DisplayAttribute) as DisplayAttribute;
             return displayAttribute?.Description ?? propertyName;
         }
-        public EntityKeyMember[] GetEntityKeys<TEntity>(TEntity entity) where TEntity : class
-        {
-            var objectStateEntry = ((IObjectContextAdapter)this).ObjectContext.ObjectStateManager.GetObjectStateEntry(entity);
-            return objectStateEntry.EntityKey.EntityKeyValues;
-        }
-
+        
         public DbQuery<TEntity> AsNoTracking<TEntity>() where TEntity : class
         {
             return Set<TEntity>().AsNoTracking();

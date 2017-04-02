@@ -5,6 +5,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Linq;
+    using System.ComponentModel.DataAnnotations;
 
     public class HistoryComponent
     {
@@ -13,7 +14,16 @@
 
         protected virtual string GetPrimaryKey(DbEntityEntry entry)
         {
-            return Context.GetEntityKeys(entry.Entity)?.Select(kv => kv.Value.ToString()).Aggregate(string.Empty, (str, v) => str + v);
+            var type = Context.GetObjectType(entry.Entity.GetType());
+            var keys = type.GetProperties().Where(p => p.GetCustomAttributes(false).Any(c => c is KeyAttribute)).ToArray();
+            if (keys == null || keys.Length == 0)
+            {
+                return GetCurrentValue(entry, "id") ?? throw new Exception(string.Format("请对 {0} 的主键字段上增加注解[Key]", type.Name));
+            }
+            else
+            {//.Select(kv => kv.Value.ToString()).Aggregate(string.Empty, (str, v) => str + v);
+                return keys.Select(p=>p.Name).Aggregate(string.Empty, (str, v) => str + type.GetProperty(v).GetValue(entry.Entity));
+            }
         }
         protected virtual hy_data_history GetHistory(DbEntityEntry entry, params string[] ignores)
         {

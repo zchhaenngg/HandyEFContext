@@ -29,9 +29,9 @@
             ChangedEvent += AddDataHistory;
         }
 
-        public virtual DbSet<hy_data_history> hy_data_histories { get; set; }
+        public virtual DbSet<hy_data_history> hy_data_history { get; set; }
 
-        public virtual void AddDataHistory()
+        protected virtual void AddDataHistory()
         {
             if (ChangeTracker.HasChanges())
             {

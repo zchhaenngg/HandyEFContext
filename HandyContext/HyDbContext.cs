@@ -2,19 +2,8 @@
 {
     using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-    using System.Data.Entity.Infrastructure;
-    using System.Collections.Generic;
-    using System.Data.Entity.Validation;
-    using System.Threading.Tasks;
-    using System.Threading;
-    using System.Data.Entity.Core.Objects;
-    using System.ComponentModel.DataAnnotations;
-    using System.Text;
-    using System.Data.Entity.Core;
-    using HandyContext.Entity.Interfaces;
-    using HandyContext.Entity;
+    using HandyModel.Entity;
+    using HandyModel.Entity.Interfaces;
 
     public class HyDbContext : BaseDbContext
     {

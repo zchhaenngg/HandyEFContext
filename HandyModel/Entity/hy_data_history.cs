@@ -1,8 +1,8 @@
-﻿namespace HandyContext.Entity
+﻿namespace HandyModel.Entity
 {
-    using HandyContext.Entity.Abstracts;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using HandyModel.Entity.Abstracts;
 
     [Table("hy_data_history")]
     public partial class hy_data_history : hy_Creator
@@ -21,3 +21,4 @@
         public string description { get; set; }
     }
 }
+

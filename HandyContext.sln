@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyContext", "HandyContex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyContextTest", "HandyContextTest\HandyContextTest.csproj", "{FE203781-59AC-4FE8-B46F-E97D02D1AFB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyModel", "HandyModel\HandyModel.csproj", "{D3FF916F-45AF-4237-9556-6D1F56644E5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FE203781-59AC-4FE8-B46F-E97D02D1AFB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE203781-59AC-4FE8-B46F-E97D02D1AFB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE203781-59AC-4FE8-B46F-E97D02D1AFB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3FF916F-45AF-4237-9556-6D1F56644E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3FF916F-45AF-4237-9556-6D1F56644E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3FF916F-45AF-4237-9556-6D1F56644E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3FF916F-45AF-4237-9556-6D1F56644E5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

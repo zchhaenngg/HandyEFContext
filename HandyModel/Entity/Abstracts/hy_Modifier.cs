@@ -1,8 +1,8 @@
-﻿namespace HandyContext.Entity.Abstracts
+﻿namespace HandyModel.Entity.Abstracts
 {
-    using HandyContext.Entity.Interfaces;
     using System;
     using System.ComponentModel.DataAnnotations;
+    using HandyModel.Entity.Interfaces;
     public abstract class hy_Modifier : hy_IModifier
     {
         [Key]

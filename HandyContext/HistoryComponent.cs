@@ -1,11 +1,11 @@
 ﻿namespace HandyContext
 {
-    using HandyContext.Entity;
     using System;
+    using System.ComponentModel.DataAnnotations;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Linq;
-    using System.ComponentModel.DataAnnotations;
+    using HandyModel.Entity;
 
     public class HistoryComponent
     {

@@ -1,4 +1,4 @@
-﻿namespace HandyContext.Entity.Interfaces
+﻿namespace HandyModel.Entity.Interfaces
 {
     using System;
     public interface hy_ICreator

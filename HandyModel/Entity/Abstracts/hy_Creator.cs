@@ -1,13 +1,8 @@
-﻿using HandyContext.Entity.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HandyContext.Entity.Abstracts
+﻿namespace HandyModel.Entity.Abstracts
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using HandyModel.Entity.Interfaces;
     public abstract class hy_Creator : hy_ICreator
     {
         [Key]

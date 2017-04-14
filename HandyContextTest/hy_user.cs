@@ -5,17 +5,14 @@ namespace HandyContextTest
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using HandyModel.Entity.Abstracts;
 
-    public partial class hy_user
+    public partial class hy_user : hy_Entity
     {
         public hy_user()
         {
             hy_auth_roles = new HashSet<hy_auth_role>();
         }
-
-        [Key]
-        [StringLength(40)]
-        public string id { get; set; }
 
         public int access_failed_times { get; set; }
 

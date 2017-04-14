@@ -11,7 +11,7 @@ namespace HandyContextTest
     {
         void add()
         {
-            using (var context = new MyContext())
+            using (var context = new MyContext { LoginId = "-1"})
             {
                 var entity = new hy_user
                 {
@@ -26,8 +26,7 @@ namespace HandyContextTest
                     name = "test1 role"
                 });
                 context.Add(entity);
-                var t = context.SaveChangesAsync();
-                t.Wait();
+                context.SaveChanges();
             }
         }
 
@@ -36,25 +35,13 @@ namespace HandyContextTest
         {
             try
             {
-                Task.Factory.StartNew(() => 
-                {
-                    TaskStart(() =>
-                    {
-                        throw new ArgumentOutOfRangeException("xxx");
-                    });
-                });
+                add();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
             
-        }
-
-        public void TaskStart(Action action)
-        {
-            var tsk = Task.Factory.StartNew(action);
-            tsk.Wait();
         }
     }
 }

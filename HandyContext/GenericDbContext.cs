@@ -10,9 +10,9 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    public class BaseDbContext : DbContext
+    public class GenericDbContext : DbContext
     {
-        public BaseDbContext(string nameOrConnectionString)
+        public GenericDbContext(string nameOrConnectionString)
             :base(nameOrConnectionString)
         {
         }
@@ -65,13 +65,6 @@
         {
             return ObjectContext.GetObjectType(entityType);
         }
-        public virtual string GetPropertyDescription(Type entity, string propertyName)
-        {
-            var propertyInfo = entity.GetProperty(propertyName);
-            var displayAttribute = propertyInfo.GetCustomAttributes(false).FirstOrDefault(c => c is DisplayAttribute) as DisplayAttribute;
-            return displayAttribute?.Description ?? propertyName;
-        }
-        
         public DbQuery<TEntity> AsNoTracking<TEntity>() where TEntity : class
         {
             return Set<TEntity>().AsNoTracking();

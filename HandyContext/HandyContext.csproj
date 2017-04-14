@@ -48,9 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDbContext.cs" />
+    <Compile Include="GenericDbContext.cs" />
     <Compile Include="HistoryComponent.cs" />
-    <Compile Include="HyDbContext.cs" />
+    <Compile Include="HistoryDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

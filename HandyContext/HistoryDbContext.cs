@@ -5,20 +5,22 @@
     using HandyModel.Entity;
     using HandyModel.Entity.Interfaces;
 
-    public class HyDbContext : BaseDbContext
+    public class HistoryDbContext<THistory> : GenericDbContext 
+        where THistory: hy_data_history, new()
     {
-        private HistoryComponent _historyComponent;
-        protected virtual HistoryComponent HistoryComponent => _historyComponent ?? (_historyComponent = new HistoryComponent(this));
+        private HistoryComponent<THistory> _historyComponent;
+        protected virtual HistoryComponent<THistory> HistoryComponent => _historyComponent ?? (_historyComponent = new HistoryComponent<THistory>(this));
 
         public string LoginId { get; set; }
-        public HyDbContext(string nameOrConnectionString)
+        public string ContextId { get; } = Guid.NewGuid().ToString();
+        public HistoryDbContext(string nameOrConnectionString)
             :base(nameOrConnectionString)
         {
             ChangedEvent += Changed;
             ChangedEvent += AddDataHistory;
         }
 
-        public virtual DbSet<hy_data_history> hy_data_history { get; set; }
+        public virtual DbSet<THistory> hy_data_history { get; set; }
 
         protected virtual void AddDataHistory()
         {
@@ -34,7 +36,12 @@
                     {
                         continue;
                     }
-                    HistoryComponent.Write(entry);
+                    HistoryComponent.Write(entry, 
+                        nameof(hy_IEntity.id), 
+                        nameof(hy_IEntity.created_by_id), 
+                        nameof(hy_IEntity.created_time), 
+                        nameof(hy_IEntity.last_modified_by_id), 
+                        nameof(hy_IEntity.last_modified_time));
                 }
             }
         }

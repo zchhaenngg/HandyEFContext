@@ -7,10 +7,10 @@
     using System.Linq;
     using HandyModel.Entity;
 
-    public class HistoryComponent
+    public class HistoryComponent<THistory> where THistory : hy_data_history, new()
     {
-        public HyDbContext Context { get; set; }
-        public HistoryComponent(HyDbContext context) => Context = context;
+        public HistoryDbContext<THistory> Context { get; set; }
+        public HistoryComponent(HistoryDbContext<THistory> context) => Context = context;
 
         protected virtual string GetPrimaryKey(DbEntityEntry entry)
         {
@@ -18,18 +18,19 @@
             var keys = type.GetProperties().Where(p => p.GetCustomAttributes(false).Any(c => c is KeyAttribute)).ToArray();
             if (keys == null || keys.Length == 0)
             {
-                return GetCurrentValue(entry, "id") ?? throw new Exception(string.Format("请对 {0} 的主键字段上增加注解[Key]", type.Name));
+                return GetCurrentValue(entry, "id") ?? throw new Exception(string.Format("table {0}!Please add annotation [Key] on the primary key field", type.Name));
             }
             else
             {//.Select(kv => kv.Value.ToString()).Aggregate(string.Empty, (str, v) => str + v);
                 return keys.Select(p=>p.Name).Aggregate(string.Empty, (str, v) => str + type.GetProperty(v).GetValue(entry.Entity));
             }
         }
-        protected virtual hy_data_history GetHistory(DbEntityEntry entry, params string[] ignores)
+        protected virtual THistory GetHistory(DbEntityEntry entry, params string[] ignores)
         {
-            var data = new hy_data_history
+            var data = new THistory
             {
                 id = Guid.NewGuid().ToString(),
+                context_id = Context.ContextId,
                 created_by_id = Context.LoginId,
                 created_time = DateTime.UtcNow,
                 unique_key = GetPrimaryKey(entry),
@@ -45,12 +46,14 @@
             switch (state)
             {
                 case EntityState.Added:
-                    return "新增";
+                    return "Added";
                 case EntityState.Modified:
-                    return "修改";
+                    return "Modified";
                 case EntityState.Deleted:
+                    return "Deleted";
                 default:
-                    return "删除";
+                    return state.ToString();
+                    
             }
         }
 
@@ -59,15 +62,15 @@
             switch (entry.State)
             {
                 case EntityState.Added:
-                    return entry.CurrentValues.PropertyNames.Where(p => !ignores?.Contains(p) != null && IsToRecord(entry.CurrentValues[p], null))
-                        .Select(p => string.Format("{0}:{1}", Context.GetPropertyDescription(entry.Entity.GetType(), p), GetCurrentValue(entry, p)))
-                        .Aggregate((current, item) => { return current += item + "<br/>"; });
+                    return entry.CurrentValues.PropertyNames.Where(p => ignores != null && !ignores.Contains(p) || ignores == null).Where(p => IsToRecord(entry.CurrentValues[p], null))
+                        .Select(p => string.Format("{0}:{1}", GetPropertyDescription(entry.Entity.GetType(), p), GetCurrentValue(entry, p)))
+                        .Aggregate((current, item) => { return current += "<br/>" + item; });
                 case EntityState.Modified:
-                    return entry.CurrentValues.PropertyNames.Where(p => !ignores?.Contains(p) != null && IsToRecord(entry.CurrentValues[p], entry.OriginalValues[p]))
-                        .Select(p => string.Format("{0}:{1} -> {2}", Context.GetPropertyDescription(entry.Entity.GetType(), p), GetOrginalValue(entry, p), GetCurrentValue(entry, p)))
-                        .Aggregate((current, item) => { return current += item + "<br/>"; });
+                    return entry.CurrentValues.PropertyNames.Where(p => ignores != null && !ignores.Contains(p) || ignores == null).Where(p => IsToRecord(entry.CurrentValues[p], entry.OriginalValues[p]))
+                        .Select(p => string.Format("{0}:{1} -> {2}", GetPropertyDescription(entry.Entity.GetType(), p), GetOrginalValue(entry, p), GetCurrentValue(entry, p)))
+                        .Aggregate((current, item) => { return current += "<br/>" + item; });
                 case EntityState.Deleted:
-                    return "已删除！";
+                    return "Deleted！";
                 default:
                     return null;
             }
@@ -108,6 +111,12 @@
             {
                 Context.Add(history);
             }
+        }
+        protected virtual string GetPropertyDescription(Type entity, string propertyName)
+        {
+            var propertyInfo = entity.GetProperty(propertyName);
+            var displayAttribute = propertyInfo.GetCustomAttributes(false).FirstOrDefault(c => c is DisplayAttribute) as DisplayAttribute;
+            return displayAttribute?.Description ?? propertyName;
         }
     }
 }

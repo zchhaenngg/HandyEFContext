@@ -5,8 +5,9 @@ namespace HandyContextTest
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
     using HandyContext;
+    using HandyModel.Entity;
 
-    public partial class MyContext : HyDbContext
+    public partial class MyContext : HistoryDbContext<hy_data_history>
     {
         public MyContext()
             : base("name=TestModel")

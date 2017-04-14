@@ -19,6 +19,10 @@
 
         [Required]
         public string description { get; set; }
+
+        [Required]
+        [StringLength(40)]
+        public string context_id { get; set; }
     }
 }
 

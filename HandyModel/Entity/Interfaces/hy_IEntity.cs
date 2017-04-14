@@ -2,5 +2,6 @@
 {
     public interface hy_IEntity : hy_ICreator, hy_IModifier
     {
+        string id { get; set; }
     }
 }

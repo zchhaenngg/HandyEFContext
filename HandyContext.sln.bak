@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handy.EF.Context", "Handy.EF.Context\Handy.EF.Context.csproj", "{FAD612C1-1DB9-4519-93B9-21BFC079F71C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handy.EF.Context", "HandyContext\Handy.EF.Context.csproj", "{FAD612C1-1DB9-4519-93B9-21BFC079F71C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyContextTest", "HandyContextTest\HandyContextTest.csproj", "{FE203781-59AC-4FE8-B46F-E97D02D1AFB5}"
 EndProject

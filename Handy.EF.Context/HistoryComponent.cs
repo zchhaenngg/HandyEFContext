@@ -1,4 +1,4 @@
-﻿//namespace HandyContext
+﻿//namespace Handy.EF.Context
 //{
 //    using System;
 //    using System.ComponentModel.DataAnnotations;
@@ -53,7 +53,7 @@
 //                    return "Deleted";
 //                default:
 //                    return state.ToString();
-                    
+
 //            }
 //        }
 

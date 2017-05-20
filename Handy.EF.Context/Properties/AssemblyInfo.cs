@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("HandyContext")]
+[assembly: AssemblyTitle("Handy.EF.Context")]
 [assembly: AssemblyDescription("对EF的DbContext的一些增强实现，并记录对数据库的操作历史")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HandyContext")]
+[assembly: AssemblyProduct("Handy.EF.Context")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

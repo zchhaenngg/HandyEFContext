@@ -1,4 +1,4 @@
-﻿namespace HandyContext
+﻿namespace Handy.EF.Context
 {
     using System;
     using System.Collections.Generic;

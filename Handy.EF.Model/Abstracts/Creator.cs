@@ -3,15 +3,15 @@
     using System;
     using System.ComponentModel.DataAnnotations;
     using HandyModel.Entity.Interfaces;
-    public abstract class hy_Creator : hy_ICreator
+    public abstract class Creator : ICreator
     {
         [Key]
         [StringLength(40)]
-        public string id { get; set; }
+        public string Id { get; set; }
 
         [StringLength(40)]
-        public string created_by_id { get; set; }
+        public string CreatedById { get; set; }
 
-        public DateTime created_time { get; set; }
+        public DateTime CreatedTime { get; set; }
     }
 }

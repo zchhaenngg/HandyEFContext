@@ -103,10 +103,6 @@
       <Project>{FAD612C1-1DB9-4519-93B9-21BFC079F71C}</Project>
       <Name>HandyContext</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HandyModel\HandyModel.csproj">
-      <Project>{D3FF916F-45AF-4237-9556-6D1F56644E5D}</Project>
-      <Name>HandyModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201704011529355_initial.resx">

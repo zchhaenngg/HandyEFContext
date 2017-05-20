@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyContext", "HandyContext\HandyContext.csproj", "{FAD612C1-1DB9-4519-93B9-21BFC079F71C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyContextTest", "HandyContextTest\HandyContextTest.csproj", "{FE203781-59AC-4FE8-B46F-E97D02D1AFB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyModel", "HandyModel\HandyModel.csproj", "{D3FF916F-45AF-4237-9556-6D1F56644E5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handy.EF.Model", "Handy.EF.Model\Handy.EF.Model.csproj", "{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{FE203781-59AC-4FE8-B46F-E97D02D1AFB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE203781-59AC-4FE8-B46F-E97D02D1AFB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE203781-59AC-4FE8-B46F-E97D02D1AFB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3FF916F-45AF-4237-9556-6D1F56644E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3FF916F-45AF-4237-9556-6D1F56644E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D3FF916F-45AF-4237-9556-6D1F56644E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D3FF916F-45AF-4237-9556-6D1F56644E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

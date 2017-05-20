@@ -57,11 +57,5 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HandyModel\HandyModel.csproj">
-      <Project>{d3ff916f-45af-4237-9556-6d1f56644e5d}</Project>
-      <Name>HandyModel</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

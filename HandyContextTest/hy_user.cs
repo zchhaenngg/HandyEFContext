@@ -7,7 +7,7 @@ namespace HandyContextTest
     using System.Data.Entity.Spatial;
     using HandyModel.Entity.Abstracts;
 
-    public partial class hy_user : hy_Entity
+    public partial class hy_user : CreatorModifier
     {
         public hy_user()
         {

@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D3FF916F-45AF-4237-9556-6D1F56644E5D}</ProjectGuid>
+    <ProjectGuid>{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HandyModel</RootNamespace>
-    <AssemblyName>HandyModel</AssemblyName>
+    <RootNamespace>Handy.EF.Model</RootNamespace>
+    <AssemblyName>Handy.EF.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,9 +28,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\HandyModel.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -43,14 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\Abstracts\hy_Creator.cs" />
-    <Compile Include="Entity\Abstracts\hy_Entity.cs" />
-    <Compile Include="Entity\Abstracts\hy_Modifier.cs" />
-    <Compile Include="Entity\hy_data_history.cs" />
-    <Compile Include="Entity\Interfaces\hy_ICreator.cs" />
-    <Compile Include="Entity\Interfaces\hy_IEntity.cs" />
-    <Compile Include="Entity\Interfaces\hy_IModifier.cs" />
+    <Compile Include="Abstracts\Creator.cs" />
+    <Compile Include="Abstracts\CreatorModifier.cs" />
+    <Compile Include="Abstracts\Modifier.cs" />
+    <Compile Include="Interfaces\ICreator.cs" />
+    <Compile Include="Interfaces\IDescription.cs" />
+    <Compile Include="Interfaces\IKey.cs" />
+    <Compile Include="Interfaces\IModifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

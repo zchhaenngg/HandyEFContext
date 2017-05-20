@@ -3,15 +3,15 @@
     using System;
     using System.ComponentModel.DataAnnotations;
     using HandyModel.Entity.Interfaces;
-    public abstract class hy_Modifier : hy_IModifier
+    public abstract class Modifier : IModifier
     {
         [Key]
         [StringLength(40)]
-        public string id { get; set; }
+        public string Id { get; set; }
 
         [StringLength(40)]
-        public string last_modified_by_id { get; set; }
+        public string LastModifiedById { get; set; }
 
-        public DateTime last_modified_time { get; set; }
+        public DateTime LastModifiedTime { get; set; }
     }
 }

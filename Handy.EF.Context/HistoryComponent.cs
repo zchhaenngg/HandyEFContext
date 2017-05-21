@@ -22,7 +22,7 @@
 //            }
 //            else
 //            {//.Select(kv => kv.Value.ToString()).Aggregate(string.Empty, (str, v) => str + v);
-//                return keys.Select(p=>p.Name).Aggregate(string.Empty, (str, v) => str + type.GetProperty(v).GetValue(entry.Entity));
+//                return keys.Select(p => p.Name).Aggregate(string.Empty, (str, v) => str + type.GetProperty(v).GetValue(entry.Entity));
 //            }
 //        }
 //        protected virtual THistory GetHistory(DbEntityEntry entry, params string[] ignores)
@@ -105,7 +105,7 @@
 //            return entry.OriginalValues[propertyName]?.ToString();
 //        }
 //        public virtual void Write(DbEntityEntry entry, params string[] ignores)
-//        {  
+//        {
 //            var history = GetHistory(entry, ignores);
 //            if (!string.IsNullOrWhiteSpace(history.description))
 //            {

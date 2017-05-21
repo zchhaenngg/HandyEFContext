@@ -5,8 +5,8 @@
 //    using HandyModel.Entity;
 //    using HandyModel.Entity.Interfaces;
 
-//    public class HistoryDbContext<THistory> : GenericDbContext 
-//        where THistory: hy_data_history, new()
+//    public class HistoryDbContext<THistory> : GenericDbContext
+//        where THistory : hy_data_history, new()
 //    {
 //        private HistoryComponent<THistory> _historyComponent;
 //        protected virtual HistoryComponent<THistory> HistoryComponent => _historyComponent ?? (_historyComponent = new HistoryComponent<THistory>(this));
@@ -14,7 +14,7 @@
 //        public string LoginId { get; set; }
 //        public string ContextId { get; } = Guid.NewGuid().ToString();
 //        public HistoryDbContext(string nameOrConnectionString)
-//            :base(nameOrConnectionString)
+//            : base(nameOrConnectionString)
 //        {
 //            ChangedEvent += Changed;
 //            ChangedEvent += AddDataHistory;
@@ -36,11 +36,11 @@
 //                    {
 //                        continue;
 //                    }
-//                    HistoryComponent.Write(entry, 
-//                        nameof(ICreatorModifier.id), 
-//                        nameof(ICreatorModifier.CreatedById), 
-//                        nameof(ICreatorModifier.CreatedTime), 
-//                        nameof(ICreatorModifier.Last_modified_by_id), 
+//                    HistoryComponent.Write(entry,
+//                        nameof(ICreatorModifier.id),
+//                        nameof(ICreatorModifier.CreatedById),
+//                        nameof(ICreatorModifier.CreatedTime),
+//                        nameof(ICreatorModifier.Last_modified_by_id),
 //                        nameof(ICreatorModifier.Last_modified_time));
 //                }
 //            }

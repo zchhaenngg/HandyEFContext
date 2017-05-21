@@ -50,11 +50,13 @@
     <Compile Include="Abstracts\Creator.cs" />
     <Compile Include="Abstracts\CreatorModifier.cs" />
     <Compile Include="Abstracts\Modifier.cs" />
+    <Compile Include="System\LogEvent.cs" />
     <Compile Include="Interfaces\ICreator.cs" />
     <Compile Include="Interfaces\IDescription.cs" />
     <Compile Include="Interfaces\IKey.cs" />
     <Compile Include="Interfaces\IModifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\LogEventType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

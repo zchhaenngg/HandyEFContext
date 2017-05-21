@@ -53,10 +53,20 @@
     <Compile Include="GenericDbContext.cs" />
     <Compile Include="HistoryComponent.cs" />
     <Compile Include="HistoryDbContext.cs" />
+    <Compile Include="History\HistoryField.cs" />
+    <Compile Include="History\HistoryFieldValue.cs" />
+    <Compile Include="History\HistoryTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Handy.EF.Model\Handy.EF.Model.csproj">
+      <Project>{5ecd0754-9674-44f6-adde-c6d7c774c0d7}</Project>
+      <Name>Handy.EF.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,1 @@
+﻿EAV,Entity–attribute–value model

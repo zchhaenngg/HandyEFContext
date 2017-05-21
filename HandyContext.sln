@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandyContextTest", "HandyCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handy.EF.Model", "Handy.EF.Model\Handy.EF.Model.csproj", "{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handy.EF.Model.EAV", "Handy.EF.Model.EAV\Handy.EF.Model.EAV.csproj", "{FFC3A10F-2D94-44E3-BF4C-FC065BA319AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC3A10F-2D94-44E3-BF4C-FC065BA319AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC3A10F-2D94-44E3-BF4C-FC065BA319AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC3A10F-2D94-44E3-BF4C-FC065BA319AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC3A10F-2D94-44E3-BF4C-FC065BA319AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

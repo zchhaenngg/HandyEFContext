@@ -125,7 +125,8 @@
             {
                 Id = Guid.NewGuid().ToString(),
                 Value = entry.CurrentValues[prop]?.ToString(),
-                LogEvent = Context.LogEvent
+                CreatedById = Context.LoginId,
+                CreatedTime = DateTime.UtcNow
             });
         }
 

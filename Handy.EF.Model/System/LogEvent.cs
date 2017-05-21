@@ -13,6 +13,7 @@ namespace Handy.EF.Model.Entity
     /// </summary>
     public class LogEvent : Creator
     {
+        public long? SessionId { get; set; }
         public LogEventType EventType { get; set; }       
     }
 }

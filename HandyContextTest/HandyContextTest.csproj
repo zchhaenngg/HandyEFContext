@@ -98,6 +98,14 @@
     <Compile Include="Migrations\201705231515060_modified.Designer.cs">
       <DependentUpon>201705231515060_modified.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705231550195_modified1.cs" />
+    <Compile Include="Migrations\201705231550195_modified1.Designer.cs">
+      <DependentUpon>201705231550195_modified1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705231554019_modifiedField.cs" />
+    <Compile Include="Migrations\201705231554019_modifiedField.Designer.cs">
+      <DependentUpon>201705231554019_modifiedField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyContext.cs" />
@@ -143,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705231515060_modified.resx">
       <DependentUpon>201705231515060_modified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231550195_modified1.resx">
+      <DependentUpon>201705231550195_modified1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231554019_modifiedField.resx">
+      <DependentUpon>201705231554019_modifiedField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

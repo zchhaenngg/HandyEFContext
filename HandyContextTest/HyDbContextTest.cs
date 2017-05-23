@@ -13,6 +13,19 @@ namespace HandyContextTest
         {
             using (var context = new MyContext { LoginId = "-1" })
             {
+                context.LogEvent = new Handy.EF.Model.Entity.LogEvent
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    CreatedTime = DateTime.UtcNow,
+                    CreatedById = context.LoginId,
+                    EventType = new Handy.EF.Model.System.LogEventType
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Name = "unitTest",
+                        CreatedTime = DateTime.UtcNow,
+                        LastModifiedTime = DateTime.UtcNow
+                    }
+                };
                 var entity = new hy_user
                 {
                     Id = Guid.NewGuid().ToString(),
@@ -22,7 +35,7 @@ namespace HandyContextTest
                 };
                 entity.hy_auth_roles.Add(new hy_auth_role
                 {
-                    id = Guid.NewGuid().ToString(),
+                    Id = Guid.NewGuid().ToString(),
                     name = "test1 role"
                 });
                 context.Add(entity);

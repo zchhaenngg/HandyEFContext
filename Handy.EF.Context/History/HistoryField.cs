@@ -24,6 +24,8 @@ namespace Handy.EF.Context.History
         [Required]
         [StringLength(40)]
         public string UniqueKey { get; set; }
+        [StringLength(128)]
+        public string Name { get; set; }
         public bool IsDeleted { get; set; }
         public ICollection<HistoryFieldValue> Values { get; set; }
         public HistoryTable Table { get; set; }

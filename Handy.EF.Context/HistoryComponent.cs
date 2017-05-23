@@ -107,14 +107,16 @@
         private void WriteFieldChanged(DbEntityEntry entry, THistoryTable table, string prop)
         {
             var columnName = GetColumnName(entry.Entity.GetType(), prop);
-            var field = Context.HistoryField.FirstOrDefault(o => o.UniqueKey == GetPrimaryKey(entry));
+            var key = GetPrimaryKey(entry);
+            var field = Context.HistoryField.FirstOrDefault(o => o.UniqueKey == key);
             if (field == null)
             {
                 field = new THistoryField
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UniqueKey = GetPrimaryKey(entry),
+                    UniqueKey = key,
                     Table = table,
+                    Name = columnName,
                     CreatedById = Context.LoginId,
                     CreatedTime = DateTime.UtcNow,
                     LastModifiedById = Context.LoginId,
@@ -128,12 +130,13 @@
                 CreatedById = Context.LoginId,
                 CreatedTime = DateTime.UtcNow
             });
+            Context.HistoryField.Add(field);
         }
 
         protected string GetColumnName(Type entityType, string propertyName)
         {
             var attr = entityType.GetProperty(propertyName).GetCustomAttributes(false).FirstOrDefault(o => o is ColumnAttribute) as ColumnAttribute;
-            return attr != null ? attr.Name : entityType.Name;
+            return attr != null ? attr.Name : propertyName;
         }
     }
 }

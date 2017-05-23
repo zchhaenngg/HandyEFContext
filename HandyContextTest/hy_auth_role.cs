@@ -22,6 +22,7 @@ namespace HandyContextTest
 
         public hy_user Creator { get; set; }
 
+        
         public virtual ICollection<hy_user> hy_users { get; set; }
     }
 }

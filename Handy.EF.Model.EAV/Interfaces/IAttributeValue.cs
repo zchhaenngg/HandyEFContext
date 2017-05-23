@@ -7,10 +7,13 @@ using HandyModel.Entity.Interfaces;
 
 namespace Handy.EF.Model.EAV.Interfaces
 {
-    public interface IAttributeValue<TEntity, TValue> : IKey where TEntity : class
+    public interface IAttributeValue<TAttribute, TMetaData, TValue> : IKey 
+        where TAttribute : IAttribute<TMetaData>
+        where TMetaData: IMetaData<TAttribute>
     {
-        IAttribute Attribute { get; set; }
-        TEntity Entity { get; set; }
+        TAttribute Attribute { get; set; }
+        string EntityId { get; set; }
         TValue Value { get; set; }
     }
 }
+ 

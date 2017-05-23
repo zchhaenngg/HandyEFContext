@@ -12,7 +12,10 @@ namespace Handy.EF.Model.EAV.Interfaces
     /// </summary>
     public interface IMetaData : IKey
     {
-        IAttribute Attribute { get; set; }
         bool IsRequired { get; set; }
+    }
+    public interface IMetaData<TAttribute>: IMetaData where TAttribute : IAttribute
+    {
+        TAttribute Attribute { get; set; }
     }
 }

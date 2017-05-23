@@ -8,10 +8,12 @@ using HandyModel.Entity.Abstracts;
 
 namespace Handy.EF.Model.EAV.Abstracts
 {
-    public abstract class AttributeValueDateTime<TEntity> : CreatorModifier, IAttributeValue<TEntity, DateTime> where TEntity : class
+    public abstract class AttributeValueDateTime<TAttribute, TMetaData> : CreatorModifier, IAttributeValue<TAttribute, TMetaData, DateTime>
+        where TAttribute : IAttribute<TMetaData>
+        where TMetaData : IMetaData<TAttribute>
     {
-        public IAttribute Attribute { get; set; }
-        public TEntity Entity { get; set; }
+        public TAttribute Attribute { get; set; }
+        public string EntityId { get; set; }
         public DateTime Value { get; set; }
     }
 }

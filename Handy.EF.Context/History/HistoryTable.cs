@@ -10,7 +10,7 @@ using HandyModel.Entity.Abstracts;
 
 namespace Handy.EF.Context.History
 {
-    public abstract class HistoryTable : Creator, INotRecordHistory
+    public class HistoryTable : Creator, INotRecordHistory
     {
         [Index(IsUnique = true)]
         [StringLength(128)]

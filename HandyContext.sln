@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handy.EF.Model.History", "Handy.EF.Model.History\Handy.EF.Model.History.csproj", "{976128C9-86D9-42C3-907D-1EBACF970D11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{FFC3A10F-2D94-44E3-BF4C-FC065BA319AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFC3A10F-2D94-44E3-BF4C-FC065BA319AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFC3A10F-2D94-44E3-BF4C-FC065BA319AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{976128C9-86D9-42C3-907D-1EBACF970D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{976128C9-86D9-42C3-907D-1EBACF970D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{976128C9-86D9-42C3-907D-1EBACF970D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{976128C9-86D9-42C3-907D-1EBACF970D11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

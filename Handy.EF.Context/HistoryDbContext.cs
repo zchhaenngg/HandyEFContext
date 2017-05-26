@@ -2,9 +2,9 @@
 {
     using System;
     using System.Data.Entity;
-    using Handy.EF.Context.History;
-    using Handy.EF.Context.History.Interfaces;
     using Handy.EF.Model.Entity;
+    using Handy.EF.Model.History;
+    using Handy.EF.Model.History.Interfaces;
     using HandyModel.Entity;
     using HandyModel.Entity.Interfaces;
 

@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FAD612C1-1DB9-4519-93B9-21BFC079F71C}</ProjectGuid>
+    <ProjectGuid>{976128C9-86D9-42C3-907D-1EBACF970D11}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Handy.EF.Context</RootNamespace>
-    <AssemblyName>Handy.EF.Context</AssemblyName>
+    <RootNamespace>Handy.EF.Model.History</RootNamespace>
+    <AssemblyName>Handy.EF.Model.History</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,8 +28,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -50,24 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenericDbContext.cs" />
-    <Compile Include="HistoryComponent.cs" />
-    <Compile Include="HistoryDbContext.cs" />
+    <Compile Include="HistoryField.cs" />
+    <Compile Include="HistoryFieldValue.cs" />
+    <Compile Include="HistoryTable.cs" />
+    <Compile Include="Interfaces\INotRecordHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Handy.EF.Model\Handy.EF.Model.csproj">
+      <Project>{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}</Project>
+      <Name>Handy.EF.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Handy.EF.Model.History\Handy.EF.Model.History.csproj">
-      <Project>{976128C9-86D9-42C3-907D-1EBACF970D11}</Project>
-      <Name>Handy.EF.Model.History</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Handy.EF.Model\Handy.EF.Model.csproj">
-      <Project>{5ecd0754-9674-44f6-adde-c6d7c774c0d7}</Project>
-      <Name>Handy.EF.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

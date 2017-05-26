@@ -6,8 +6,8 @@
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Linq;
-    using Handy.EF.Context.History;
     using Handy.EF.Model.Entity;
+    using Handy.EF.Model.History;
     using HandyModel.Entity;
     using HandyModel.Entity.Interfaces;
 

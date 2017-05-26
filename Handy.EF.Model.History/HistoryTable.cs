@@ -5,10 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Handy.EF.Context.History.Interfaces;
+using Handy.EF.Model.History.Interfaces;
 using HandyModel.Entity.Abstracts;
 
-namespace Handy.EF.Context.History
+namespace Handy.EF.Model.History
 {
     public class HistoryTable : Creator, INotRecordHistory
     {

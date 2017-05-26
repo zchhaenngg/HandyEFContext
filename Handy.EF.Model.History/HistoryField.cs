@@ -4,14 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Handy.EF.Context.History.Interfaces;
+using Handy.EF.Model.History.Interfaces;
 using HandyModel.Entity.Abstracts;
 
-namespace Handy.EF.Context.History
+namespace Handy.EF.Model.History
 {
-    /// <summary>
-    /// 可以查看一个实体每个字段的历史变更记录
-    /// </summary>
     public class HistoryField : CreatorModifier, INotRecordHistory
     {
         public HistoryField()

@@ -106,6 +106,18 @@
     <Compile Include="Migrations\201705231554019_modifiedField.Designer.cs">
       <DependentUpon>201705231554019_modifiedField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705261402378_modify_HistoryField.cs" />
+    <Compile Include="Migrations\201705261402378_modify_HistoryField.Designer.cs">
+      <DependentUpon>201705261402378_modify_HistoryField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705261534591_modify-tablename.cs" />
+    <Compile Include="Migrations\201705261534591_modify-tablename.Designer.cs">
+      <DependentUpon>201705261534591_modify-tablename.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705261537174_modify-tablename2.cs" />
+    <Compile Include="Migrations\201705261537174_modify-tablename2.Designer.cs">
+      <DependentUpon>201705261537174_modify-tablename2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyContext.cs" />
@@ -118,6 +130,10 @@
     <ProjectReference Include="..\Handy.EF.Context\Handy.EF.Context.csproj">
       <Project>{FAD612C1-1DB9-4519-93B9-21BFC079F71C}</Project>
       <Name>Handy.EF.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Handy.EF.Model.History\Handy.EF.Model.History.csproj">
+      <Project>{976128C9-86D9-42C3-907D-1EBACF970D11}</Project>
+      <Name>Handy.EF.Model.History</Name>
     </ProjectReference>
     <ProjectReference Include="..\Handy.EF.Model\Handy.EF.Model.csproj">
       <Project>{5ECD0754-9674-44F6-ADDE-C6D7C774C0D7}</Project>
@@ -158,6 +174,18 @@
     <EmbeddedResource Include="Migrations\201705231554019_modifiedField.resx">
       <DependentUpon>201705231554019_modifiedField.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705261402378_modify_HistoryField.resx">
+      <DependentUpon>201705261402378_modify_HistoryField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705261534591_modify-tablename.resx">
+      <DependentUpon>201705261534591_modify-tablename.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705261537174_modify-tablename2.resx">
+      <DependentUpon>201705261537174_modify-tablename2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

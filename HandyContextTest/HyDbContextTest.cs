@@ -11,21 +11,8 @@ namespace HandyContextTest
     {
         void add()
         {
-            using (var context = new MyContext { LoginId = "-1" })
+            using (var context = new MyContext("-1", 1231212, "unitTest"))
             {
-                context.LogEvent = new Handy.EF.Model.Entity.LogEvent
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    CreatedTime = DateTime.UtcNow,
-                    CreatedById = context.LoginId,
-                    EventType = new Handy.EF.Model.System.LogEventType
-                    {
-                        Id = Guid.NewGuid().ToString(),
-                        Name = "unitTest",
-                        CreatedTime = DateTime.UtcNow,
-                        LastModifiedTime = DateTime.UtcNow
-                    }
-                };
                 var entity = new hy_user
                 {
                     Id = Guid.NewGuid().ToString(),

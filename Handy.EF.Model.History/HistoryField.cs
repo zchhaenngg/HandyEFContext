@@ -9,7 +9,10 @@ using HandyModel.Entity.Abstracts;
 
 namespace Handy.EF.Model.History
 {
-    public class HistoryField : CreatorModifier, INotRecordHistory
+    /// <summary>
+    /// 某个实体的字段变更历史
+    /// </summary>
+    public class HistoryField : Creator, INotRecordHistory
     {
         public HistoryField()
         {

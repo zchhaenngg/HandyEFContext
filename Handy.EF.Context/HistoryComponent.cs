@@ -15,7 +15,7 @@
         where THistoryTable : HistoryTable, new()
         where THistoryField : HistoryField, new()
         where THistoryFieldValue : HistoryFieldValue, new()
-        where TLogEvent : LogEvent
+        where TLogEvent : LogEvent, new()
     {
         public HistoryDbContext<THistoryTable, THistoryField, THistoryFieldValue, TLogEvent> Context { get; set; }
         public HistoryComponent(HistoryDbContext<THistoryTable, THistoryField, THistoryFieldValue, TLogEvent> context) => Context = context;
@@ -118,15 +118,14 @@
                     Table = table,
                     Name = columnName,
                     CreatedById = Context.LoginId,
-                    CreatedTime = DateTime.UtcNow,
-                    LastModifiedById = Context.LoginId,
-                    LastModifiedTime = DateTime.UtcNow
+                    CreatedTime = DateTime.UtcNow
                 };
             }
             field.Values.Add(new HistoryFieldValue
             {
                 Id = Guid.NewGuid().ToString(),
                 Value = entry.CurrentValues[prop]?.ToString(),
+                LogEvent = Context.LogEvent,
                 CreatedById = Context.LoginId,
                 CreatedTime = DateTime.UtcNow
             });

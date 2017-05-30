@@ -1,5 +1,5 @@
 ﻿1.给用户test1，配置权限 xxx。
-如何记录该变化
+如何记录该变化?
 
 清空数据
 truncate table [handycontext_test].[dbo].hy_auth_role_hy_user;
